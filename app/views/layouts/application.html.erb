@@ -11,22 +11,13 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <li>
-        <ul><%= link_to 'Profile', profile_path(current_user) %></ul>
-        <ul><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></ul>
-        <ul><%= link_to 'Images', images_path %></ul>
-      </li>
-    <% else %>
-      <li>
-        <ul><%= link_to 'Sign in', user_session_path %></ul>
-        <ul><%= link_to 'Sign up', new_user_session_path %></ul>
-      </li>
-    <% end %>
+    <%= render 'home/nav' %>
     <div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
