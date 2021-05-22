@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
+<div class="card container">
+  <p>
+    <strong>User:</strong>
+    <%= @profile.user_id %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user_id %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @profile.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
+  <p>
+    <strong>Birthday:</strong>
+    <%= @profile.birthday %>
+  </p>
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @profile.birthday %>
-</p>
+  <p>
+    <strong>Background color:</strong>
+    <%= @profile.background_color %>
+  </p>
 
-<p>
-  <strong>Background color:</strong>
-  <%= @profile.background_color %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %>
+  <%= link_to 'Back', profiles_path %>
+</div>

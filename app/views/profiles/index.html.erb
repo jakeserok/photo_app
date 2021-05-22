@@ -30,6 +30,8 @@
 
 <br>
 
-<%= link_to 'New Profile', new_profile_path %>
+<% unless current_user.profile %>
+  <%= link_to 'New Profile', new_profile_path %>
+<% end %>
 
 <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
