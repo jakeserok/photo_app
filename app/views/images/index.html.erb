@@ -1,17 +1,21 @@
-<h1>Images#index</h1>
-<p>Find me in app/views/images/index.html.erb</p>
+<div class="centered">
+  <h1>Images</h1>
+  <%= link_to 'Home', root_path %>
+  <br/>
+  <%= link_to 'Add Image', new_image_path %>
+</div>
 
 <% @images.each do |i| %>
-  <div>
-    <strong><%= i.title %></strong>
-  </div>
+  <div class="card container">
+    <div class="centered">
+      <strong><%= i.title %></strong>
+    </div>
 
-  <div class="center-img">
-    <%= link_to image_path(i) do %>
-      <%= image_tag i.image, class: "center_img" if i.image.attached? %>  
-    <% end %>
+    <div class="center-img">
+      <%= link_to image_path(i) do %>
+        <%= image_tag i.image, class: "center_img" if i.image.attached? %>  
+      <% end %>
+    </div>
   </div>
+  <br/>
 <% end %>
-
-<%= link_to 'Add Image', new_image_path %>
-<%= link_to 'Home', root_path %>
