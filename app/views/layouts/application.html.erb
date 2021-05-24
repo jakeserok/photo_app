@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="background-color:<%= current_user.profile.background_color.split(" ").join if user_signed_in? %>">
+  <body style="background-color:<%= current_user.profile.background_color.split(" ").join if user_signed_in? && current_user.profile %>">
     <%= render 'home/nav' %>
     <div>
       <p class="notice"><%= notice %></p>

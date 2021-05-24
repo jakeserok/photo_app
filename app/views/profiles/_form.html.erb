@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :background_color %>
-    <%= form.select :background_color, ['White', 'Light Gray', 'Light Blue', 'Light Green', 'Aqua', 'Coral'], selected: 'White' %>
+    <%= form.select :background_color, ['White', 'Light Gray', 'Light Blue', 'Light Green', 'Aqua', 'Coral'], selected: current_user.profile.nil? ? 'White' : current_user.profile.background_color %>
   </div>
 
   <div class="actions">
