@@ -20,5 +20,7 @@
     <%= @profile.background_color %>
   </p>
 
-  <%= link_to 'Edit', edit_profile_path(@profile) %>
+  <div>
+    <%= link_to 'Edit', edit_profile_path(@profile), class: "btn btn-dark" %>
+  </div>
 </div>
