@@ -1,26 +1,34 @@
 <p id="notice"><%= notice %></p>
-<div class="card container">
-  <p>
-    <strong>User:</strong>
-    <%= @profile.user_id %>
-  </p>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <strong>Name:</strong>
+      <%= @profile.name %>
+    </div>
+    <div class="card-body">
+      <p>
+        <strong>Email:</strong>
+        <%= current_user.email %>
+      </p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @profile.name %>
-  </p>
+      <p>
+        <strong>Birthday:</strong>
+        <%= @profile.birthday %>
+      </p>
 
-  <p>
-    <strong>Birthday:</strong>
-    <%= @profile.birthday %>
-  </p>
+      <p>
+        <strong>Background color:</strong>
+        <%= @profile.background_color %>
+      </p>
 
-  <p>
-    <strong>Background color:</strong>
-    <%= @profile.background_color %>
-  </p>
+      <p>
+        <strong>User ID:</strong>
+        <%= @profile.user_id %>
+      </p>
 
-  <div>
-    <%= link_to 'Edit', edit_profile_path(@profile), class: "btn btn-dark" %>
+      <div>
+        <%= link_to 'Edit', edit_profile_path(@profile), class: "btn btn-dark" %>
+      </div>
+    </div>
   </div>
 </div>
