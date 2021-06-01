@@ -1,32 +1,50 @@
-<%= form_with(model: profile) do |form| %>
-  <% if profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(model: profile) do |form| %>
+        <% if profile.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
 
-      <ul>
-        <% profile.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+            <ul>
+              <% profile.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+        <div class="form-group row">
+          <%= form.label :name, class: "col-5 col-form-label text-dark" %>
+          <div class="col-6">
+            <%= form.text_field :name, class: "form-control shadow rounded", placeholder: "Enter your name" %>
+          </div>
+        </div>
+
+        <br/>
+
+        <div class="form-group row">
+          <%= form.label :birthday, class: "col-5 col-form-label text-dark" %>
+          <div class="col-6">
+            <%= form.date_select :birthday, class: "form-control shadow rounded" %>
+          </div>
+        </div>
+
+        <br/>
+
+        <div class="form-group row">
+          <%= form.label :background_color, class: "col-5 col-form-label text-dark" %>
+          <div class="col-6">
+            <%= form.select :background_color, ['White', 'Light Gray', 'Light Blue', 'Light Green', 'Aqua', 'Coral'], class: "form-control shadow rounded", selected: current_user.profile.nil? ? 'White' : current_user.profile.background_color %>
+          </div>
+        </div>
+
+        <br/>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= form.label :birthday %>
-    <%= form.date_select :birthday %>
-  </div>
-
-  <div class="field">
-    <%= form.label :background_color %>
-    <%= form.select :background_color, ['White', 'Light Gray', 'Light Blue', 'Light Green', 'Aqua', 'Coral'], selected: current_user.profile.nil? ? 'White' : current_user.profile.background_color %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
